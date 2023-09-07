@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+    font-weight: bold;
   }
   select {
     width: 100%;
@@ -11,6 +12,7 @@
     border-radius: 4px;
     font-size: 16px;
   }
+
     @media (max-width: 768px) {
     .selectOperation {
       flex-direction: column;
