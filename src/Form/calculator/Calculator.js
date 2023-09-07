@@ -4,11 +4,14 @@ import Operation from '../operation/Operation';
 import './Calculator.css';
 import Header from '../header/Header';
 
-function Calculator() {
+const Calculator = ()=> {
   const [result, setResult] = useState(0);
   const [number1, setNumber1] = useState(0);
   const [number2, setNumber2] = useState(0);
   const [operation, setOperation] = useState('add');
+  const [isSubmit, setIsSubmit] = useState(false);
+
+
 
   const formCalculation = () => {
     let calculatedResult = 0;
@@ -40,8 +43,8 @@ function Calculator() {
           break;
   
     }
-
-    setResult(calculatedResult);
+        setIsSubmit(true);
+       setResult(calculatedResult);
   };
   const Submit = (e) => {
     e.preventDefault();
@@ -55,7 +58,11 @@ function Calculator() {
       <Input setNumber1={setNumber1} setNumber2={setNumber2} operation={operation} />
       <Operation setOperation={setOperation} />
       <button type="submit">Calculate</button>
-      <div className="output">Result is: {result}</div>
+     {isSubmit && (
+      <div className="output">
+       Result is: {result} 
+        </div>
+)}
     </form>
     </>
   );
