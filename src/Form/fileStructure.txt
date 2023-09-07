@@ -1,0 +1,18 @@
+/src
+|-- /components
+|       Calculator
+|       |-- Calculator.js
+|       |-- Calculator.css
+|   
+|       Input
+|       |-- Input.js
+|       |-- Input.css
+|  
+|       Operation
+|       |-- Operation.js
+|       |-- Operation.css
+|   
+
+|
+|-- index.js
+|-- index.css
