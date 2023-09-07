@@ -35,8 +35,10 @@ function Calculator() {
       case 'square':
         calculatedResult = Math.sqrt(number1);
         break;
-      default:
-        calculatedResult = 0; 
+        case 'log':
+          calculatedResult = Math.log2(number1);
+          break;
+  
     }
 
     setResult(calculatedResult);

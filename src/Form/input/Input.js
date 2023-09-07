@@ -3,13 +3,13 @@ import React from 'react';
 
 function Input({ setNumber1, setNumber2 ,operation }) {
   const Number1Change = (e) => {
-    setNumber1(e.target.value);
+    setNumber1(parseInt(e.target.value));
   };
 
   const Number2Change = (e) => {
-    setNumber2(e.target.value);
+    setNumber2(parseInt(e.target.value));
   };
- const isSquareOperation = operation == "square";
+ const isSquareOperation = operation == "square" || operation == "log";
   return (
     <div className="inputGroup">
       <div className="form-group">
@@ -21,7 +21,7 @@ function Input({ setNumber1, setNumber2 ,operation }) {
           onChange={Number1Change}
         />
       </div>
-      {! isSquareOperation &&(
+      {! isSquareOperation && (
       <div className="form-group">
         <label htmlFor="number2">Enter number two</label>
         <input

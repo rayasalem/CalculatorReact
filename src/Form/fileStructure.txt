@@ -1,13 +1,14 @@
 /src
 |-- /components
-|       Calculator
+|       calculator
 |       |-- Calculator.js
 |       |-- Calculator.css
-|   
+|        header
+|       |-- Header.js
+|       |-- Header.css
 |       Input
 |       |-- Input.js
 |       |-- Input.css
-|  
 |       Operation
 |       |-- Operation.js
 |       |-- Operation.css

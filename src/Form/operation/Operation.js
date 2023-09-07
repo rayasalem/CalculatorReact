@@ -18,6 +18,7 @@ function Operation({ setOperation }) {
           <option value="power">^</option>
           <option value="modulo">%</option>
           <option value="square">square</option>
+          <option value="log">log2</option>
     </select>
     </div>
   );
