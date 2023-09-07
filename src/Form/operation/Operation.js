@@ -7,14 +7,14 @@ const Operation = ({ setOperation }) => {
   };
 
   const oper = [
-    { name: 'add', op: '+' },
-    { name: 'subtract', op: '-' },
-    { name: 'multiply', op: '*' },
-    { name: 'divide', op: '/' },
-    { name: 'power', op: '^' },
-    { name: 'modulo', op: '%' },
-    { name: 'square', op: 'square' },
-    { name: 'log', op: 'log2' }
+    { name: 'add', symbol: '+' },
+    { name: 'subtract', symbol: '-' },
+    { name: 'multiply', symbol: '*' },
+    { name: 'divide', symbol: '/' },
+    { name: 'power', symbol: '^' },
+    { name: 'modulo', symbol: '%' },
+    { name: 'square', symbol: 'square' },
+    { name: 'log', symbol: 'log2' }
   ];
 
   return (
@@ -24,7 +24,7 @@ const Operation = ({ setOperation }) => {
       <select id='selectOption' onChange={OperationChange}>
         {oper.map((item, index) => (
           <option  value={item.name}>
-            {item.op}
+            {item.symbol}
           </option>
         ))}
       </select>
