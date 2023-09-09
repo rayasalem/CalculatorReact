@@ -12,7 +12,6 @@ const Input = ({ label, value, onChange }) => {
        { label!=null&& <label htmlFor={label}>Enter {label}</label>}
         <input
           type="number"
-          step=".01"
           id={label}
           value={value}
           onChange={handleChange}
