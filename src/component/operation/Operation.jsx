@@ -1,6 +1,6 @@
 import React from 'react';
 import './Operation.css';
-import { OPTION } from '../../const/Constants';
+import { OPTION } from '../../const/Constant';
 
 const Operation = ({ setOperation }) => {
   const handleOperationChange = (e) => {

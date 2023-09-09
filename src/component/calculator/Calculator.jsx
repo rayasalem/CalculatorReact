@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Input from '../Input/Input';
-import Operation from '../Operation/Operation';
+import Input from '../input/Input';
+import Operation from '../operation/Operation';
 import './Calculator.css';
-import Header from '../Header/Header';
+import Header from '../header/Header';
 
 const Calculator = () => {
   const [result, setResult] = useState(0);
