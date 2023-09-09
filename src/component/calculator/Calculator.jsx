@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import Input from '../input/Input';
-import Operation from '../operation/Operation';
+import Input from '../Input/Input';
+import Operation from '../Operation/Operation';
 import './Calculator.css';
-import Header from '../header/Header';
+import Header from '../Header/Header';
 
-const Calculator = ()=> {
+const Calculator = () => {
   const [result, setResult] = useState(0);
   const [number1, setNumber1] = useState(0);
   const [number2, setNumber2] = useState(0);
   const [operation, setOperation] = useState('add');
-  const [isSubmit, setIsSubmit] = useState(false);
-
-
 
   const formCalculation = () => {
     let calculatedResult = 0;
@@ -38,34 +35,34 @@ const Calculator = ()=> {
       case 'square':
         calculatedResult = Math.sqrt(number1);
         break;
-        case 'log':
-          calculatedResult = Math.log2(number1);
-          break;
-  
+      case 'log':
+        calculatedResult = Math.log2(number1);
+        break;
+      default:
+        break;
     }
-        setIsSubmit(true);
-       setResult(calculatedResult);
+
+    setResult(calculatedResult);
   };
-  const Submit = (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     formCalculation();
   };
 
   return (
     <>
-    <Header/>
-    <form onSubmit={Submit}>
-      <Input setNumber1={setNumber1} setNumber2={setNumber2} operation={operation} />
-      <Operation setOperation={setOperation} />
-      <button type="submit">Calculate</button>
-     {isSubmit && (
-      <div className="output">
-       Result is: {result} 
+      <Header />
+      <form onSubmit={handleSubmit}>
+        <Input setNumber1={setNumber1} setNumber2={setNumber2} operation={operation} />
+        <Operation setOperation={setOperation} />
+        <button type="submit">Calculate</button>
+        <div className="output">
+          <input type="text" value={result} readOnly />
         </div>
-)}
-    </form>
+      </form>
     </>
   );
-}
+};
 
 export default Calculator;

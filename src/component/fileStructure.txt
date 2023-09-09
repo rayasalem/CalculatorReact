@@ -1,0 +1,17 @@
+src/
+|-- components/
+|   |-- Calculator/
+|   |   |-- Calculator.jsx
+|   |   |-- Calculator.css
+|   |-- Header/
+|   |   |-- Header.jsx
+|   |   |-- Header.css
+|   |-- Input/
+|   |   |-- Input.jsx
+|   |   |-- Input.css
+|   |-- Operation/
+|   |   |-- Operation.jsx
+|   |   |-- Operation.css
+|-- const/
+|   |-- Constants.jsx
+|-- index.jsx
