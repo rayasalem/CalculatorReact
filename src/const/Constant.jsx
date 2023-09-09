@@ -1,10 +1,10 @@
 export const OPTION = [
-    { name: 'add', symbol: '+' },
-    { name: 'subtract', symbol: '-' },
-    { name: 'multiply', symbol: '*' },
-    { name: 'divide', symbol: '/' },
-    { name: 'power', symbol: '^' },
-    { name: 'modulo', symbol: '%' },
-    { name: 'square', symbol: 'square' },
-    { name: 'log', symbol: 'log2' }
-  ];
+  { name: 'addition', symbol: '+' },
+  { name: 'subtraction', symbol: '-' },
+  { name: 'multiplication', symbol: '*' },
+  { name: 'division', symbol: '/' },
+  { name: 'exponentiation', symbol: '^' },
+  { name: 'modulo', symbol: '%' },
+  { name: 'square root', symbol: 'square' },
+  { name: 'logarithm', symbol: 'log2' }
+];
