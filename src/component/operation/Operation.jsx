@@ -2,9 +2,9 @@ import React from 'react';
 import './Operation.css';
 import { OPTION } from '../../const/Constant';
 
-const Operation = ({ setOperation }) => {
+const Operation = ({ onChange }) => {
   const handleOperationChange = (e) => {
-    setOperation(e.target.value);
+    onChange(e.target.value);
   };
 
   return (
