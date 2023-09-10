@@ -5,6 +5,6 @@ export const OPTION = [
   { name: 'division', symbol: '/' },
   { name: 'exponentiation', symbol: '^' },
   { name: 'modulo', symbol: '%' },
-  { name: 'square root', symbol: 'square' },
+  { name: 'squareRoot', symbol: 'square' },
   { name: 'logarithm', symbol: 'log2' }
 ];

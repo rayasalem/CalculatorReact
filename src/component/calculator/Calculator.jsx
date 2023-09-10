@@ -3,74 +3,33 @@ import Input from '../input/Input';
 import Operation from '../operation/Operation';
 import './Calculator.css';
 import Header from '../header/Header';
+import { operations } from '../function/Calculate';
 
 const Calculator = () => {
   const [result, setResult] = useState('Result');
-  const [number1, setNumber1] = useState(0); 
-  const [number2, setNumber2] = useState(0); 
+  const [number1, setNumber1] = useState(0);
+  const [number2, setNumber2] = useState(0);
   const [operation, setOperation] = useState('addition');
 
-  const formCalculation = () => {
 
-    let calculatedResult = 'Invalid input(s)';
-   
-
-    switch (operation) {
-      case 'addition':
-        calculatedResult = number1 + number2;
-        break;
-      case 'subtraction':
-        calculatedResult = number1 - number2;
-        break;
-      case 'multiplication':
-        calculatedResult = number1 * number2;
-        break;
-      case 'division':
-        if (number2 !== 0) {
-          calculatedResult = number1 / number2;
-        } else {
-          calculatedResult = 'Cannot divide by zero';
-        }
-        break;
-      case 'exponentiation':
-        calculatedResult = Math.pow(number1, number2);
-        break;
-      case 'modulo':
-        calculatedResult = number1 % number2;
-        break;
-      case 'square root':
-        if (number1 >= 0) {
-          calculatedResult = Math.sqrt(number1);
-        } else {
-          calculatedResult = 'Cannot calculate square root of a negative number';
-        }
-        break;
-      case 'logarithm':
-        if (number1 > 0) {
-          calculatedResult = Math.log2(number1);
-        } else {
-          calculatedResult = 'Cannot calculate logarithm of a non-positive number';
-        }
-        break;
- 
-    }
-
-    setResult(calculatedResult);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    formCalculation();
-  };
-  const label = 'Number';
+
+    const calculate = operations[operation];
+
+    {!calculate ? setResult('Invalid operation') : setResult(calculate(number1, number2));}}
+
+  const LABEL = 'Number';
+  const isOneInput=  operation !== 'squareRoot' && operation !== 'logarithm';
 
   return (
     <>
       <Header />
       <form onSubmit={handleSubmit}>
-        <Input label={`${label} 1`} value={number1} onChange={setNumber1} />
-        {operation !== 'square root' && operation !== 'logarithm' && (
-          <Input label={`${label} 2`} value={number2} onChange={setNumber2} operation={operation} />
+        <Input label={`${LABEL} 1`} value={number1} onChange={setNumber1} />
+        { isOneInput && (
+          <Input label={`${LABEL} 2`} value={number2} onChange={setNumber2} />
         )}
         <Operation onChange={setOperation} />
         <button type="submit">Calculate</button>
@@ -80,6 +39,5 @@ const Calculator = () => {
       </form>
     </>
   );
-};
-
+        };
 export default Calculator;
