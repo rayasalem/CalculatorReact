@@ -4,6 +4,7 @@ import Operation from '../operation/Operation';
 import './Calculator.css';
 import Header from '../header/Header';
 import { operations } from '../function/Calculate';
+import { LABEL } from '../../const/Constant';
 
 const Calculator = () => {
   const [result, setResult] = useState('Result');
@@ -20,7 +21,6 @@ const Calculator = () => {
 
     {!calculate ? setResult('Invalid operation') : setResult(calculate(number1, number2));}}
 
-  const LABEL = 'Number';
   const isOneInput=  operation !== 'squareRoot' && operation !== 'logarithm';
 
   return (

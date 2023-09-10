@@ -8,3 +8,4 @@ export const OPTION = [
   { name: 'squareRoot', symbol: 'square' },
   { name: 'logarithm', symbol: 'log2' }
 ];
+export   const LABEL = 'Number';
