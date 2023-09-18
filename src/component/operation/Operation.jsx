@@ -1,10 +1,11 @@
 import React from 'react';
 import './Operation.css';
-import { OPTION } from '../../const/Constant';
+import { OPTION,SET_OPERATION  } from '../../const/Constant';
 
-const Operation = ({ onChange }) => {
+const Operation = ({ dispatch }) => {
   const handleOperationChange = (e) => {
-    onChange(e.target.value);
+      dispatch({ type: SET_OPERATION, payload: e.target.value });
+    
   };
 
   return (
@@ -12,8 +13,8 @@ const Operation = ({ onChange }) => {
       <br />
       <label htmlFor="selectOption">Select operation</label>
       <select id="selectOption" onChange={handleOperationChange}>
-        {OPTION.map((item, index) => (
-          <option key={index} value={item.name}>
+        {OPTION.map((item) => (
+          <option key={item.name} value={item.name}>
             {item.symbol}
           </option>
         ))}
