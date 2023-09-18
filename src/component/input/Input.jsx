@@ -2,13 +2,15 @@ import React from 'react';
 import './Input.css';
 import { SET_NUMBER1, SET_NUMBER2 } from '../../const/Constant';
 
-const Input = ({ label, value, dispatch, readOnly = false, inputType }) => {
+const Input = ({ label, value, dispatch, readOnly =false, inputType }) => {
   const handleInputChange = (e) => {
-    switch({inputType}) {
+    switch(inputType) {
     case 'number1' :
       dispatch({ type: SET_NUMBER1, payload: parseFloat(e.target.value) });
+      break;
      case 'number2':
       dispatch({ type: SET_NUMBER2, payload: parseFloat(e.target.value) });
+      break;
     }
   };
 
@@ -17,7 +19,7 @@ const Input = ({ label, value, dispatch, readOnly = false, inputType }) => {
       <div className="form-group">
         {label != null && <label htmlFor={label}>Enter {label}</label>}
         <input
-          type={readOnly ? 'text' : 'number'}
+          type='number'
           id={label}
           value={value}
           onChange={readOnly ? null : handleInputChange}

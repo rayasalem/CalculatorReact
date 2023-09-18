@@ -5,6 +5,7 @@ import './Calculator.css';
 import Header from '../header/Header';
 import {calculatorReducer } from './CalculationFunction';
 import { LABEL, RESET, CALCULATE,INITIAL_STATE } from '../../const/Constant';
+import Button from '../button/Button';
 
 
 const Calculator = () => {
@@ -19,8 +20,7 @@ const Calculator = () => {
     dispatch({ type: RESET });
   };
 
-  const isOneInput =
-    state.operation !== 'squareRoot' && state.operation !== 'logarithm';
+  const isOneInput =state.operation !== 'squareRoot' && state.operation !== 'logarithm';
 
   return (
     <>
@@ -41,10 +41,10 @@ const Calculator = () => {
           />
         )}
         <Operation dispatch={dispatch}/>
-        <button type='submit'>Calculate</button>
-        <button type='button' onClick={handleReset}>Reset</button>
+        <Button type='submit' label='Calculate' />
+        <Button type='button' onClick={handleReset} label='Reset' />
         <div className='output'>
-          <Input value={state.result} readOnly />
+          <Input value={state.result} readOnly={true} />
         </div>
       </form>
     </>
